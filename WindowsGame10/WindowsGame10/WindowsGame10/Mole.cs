@@ -13,9 +13,18 @@ namespace WindowsGame10
 {
     class Mole
     {
+        public Mole(Rectangle rectangle)
+        {
+            //field = rectangle;
+            //rec = new Rectangle(field.X,field.Y+field.Height/7*6,field.Width/7,field.Height/7);
+            field = new Rectangle(0,0,700,700);
+            rec = new Rectangle(0, 780, 70, 70);
+        }
         Texture2D mole_right;
         Texture2D mole_left;
 
+        public Rectangle field;
+        public Rectangle rec;
         public int posX=0;
         public int posY=6;
         public bool movingDown = false;
@@ -42,26 +51,25 @@ namespace WindowsGame10
            spriteBatch.End();
        }
        
-        public Rectangle rec = new Rectangle(30,780,50,70);
         public void MoveDown()
         {
-            rec.Y += 4;
-            
+            //rec.Y += 4;
+            rec.Y += field.Height / (7 * 25);
         }
         public void MoveUp()
         {
-            rec.Y -= 4;
-            
+            //rec.Y -= 4;
+            rec.Y -= field.Height / (7 * 25);
         }
         public void MoveRight()
         {
-            rec.X += 4;
-
+            //rec.X += 4;
+            rec.X += field.Width / (7 * 25);
         }
         public void MoveLeft()
         {
-            rec.X -= 4;
-
+            //rec.X -= 4;
+            rec.X -= field.Width / (7 * 25);
         }
     }
 }

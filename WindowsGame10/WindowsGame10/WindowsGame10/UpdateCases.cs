@@ -14,6 +14,7 @@ namespace WindowsGame10
     class UpdateCases
     {
         static bool pressed = false;
+        static int i;
         public static bool CaseDown(Mole mole)
         {
             if ((Keyboard.GetState().IsKeyDown(Keys.Down)) && !pressed && !mole.moving&&mole.posY<6)
@@ -21,6 +22,7 @@ namespace WindowsGame10
                 mole.movingDown = true;
                 mole.moving = true;
                 pressed = true;
+                i = 0;
             }
             if (Keyboard.GetState().IsKeyUp(Keys.Down) && pressed)
             {
@@ -29,7 +31,8 @@ namespace WindowsGame10
             if (mole.movingDown)
             {
                 mole.MoveDown();
-                if (mole.rec.Y % 100 == 80)
+                i++;
+                if (i==25)
                 {
                     mole.movingDown = false;
                     mole.moving = false;
@@ -48,6 +51,7 @@ namespace WindowsGame10
                 mole.movingUp = true;
                 mole.moving = true;
                 pressed = true;
+                i = 0;
             }
             if (Keyboard.GetState().IsKeyUp(Keys.Up) && pressed)
             {
@@ -56,7 +60,8 @@ namespace WindowsGame10
             if (mole.movingUp)
             {
                 mole.MoveUp();
-                if (mole.rec.Y % 100 == 80)
+                i++;
+                if (i==25)
                 {
                     mole.movingUp = false;
                     mole.moving = false;
@@ -76,6 +81,7 @@ namespace WindowsGame10
                 mole.movingRight = true;
                 mole.moving = true;
                 pressed = true;
+                i = 0;
             }
             if (Keyboard.GetState().IsKeyUp(Keys.Right) && pressed )
             {
@@ -84,7 +90,8 @@ namespace WindowsGame10
             if (mole.movingRight)
             {
                 mole.MoveRight();
-                if (mole.rec.X % 100 == 30)
+                i++;
+                if (i==25)
                 {
                     mole.movingRight = false;
                     mole.moving = false;
@@ -104,6 +111,7 @@ namespace WindowsGame10
                 mole.movingLeft = true;
                 mole.moving = true;
                 pressed = true;
+                i = 0;
             }
             if (Keyboard.GetState().IsKeyUp(Keys.Left) && pressed)
             {
@@ -112,7 +120,8 @@ namespace WindowsGame10
             if (mole.movingLeft)
             {
                 mole.MoveLeft();
-                if (mole.rec.X % 100 == 30)
+                i++;
+                if (i==25)
                 {
                     mole.movingLeft = false;
                     mole.moving = false;
