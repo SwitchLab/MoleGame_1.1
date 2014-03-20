@@ -22,7 +22,7 @@ namespace WindowsGame10
         Map map;
         Texture2D soil;
         Mole mole;
-        Rectangle screenRectangle;
+        Rectangle screenRectangle, fieldRectangle;
 
         
 
@@ -57,6 +57,8 @@ namespace WindowsGame10
             base.Initialize();
             screenRectangle = new Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width,
                 GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
+            fieldRectangle = new Rectangle(screenRectangle.Width * 216 / 1252, screenRectangle.Height * 189 / 1024,
+                screenRectangle.Width * 800 / 1252, screenRectangle.Height * 741 / 1024);
             
         }
 
